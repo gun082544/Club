@@ -1,13 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author int105
- */
+import java.util.Scanner;
+
 public class MainMenu {
-    
+    public static void main(String[] args) {
+        int num;
+        do{
+            System.out.println("<<MainMenu>>");
+            System.out.println("1.New Club");
+            System.out.println("2.Membership Subscribe");
+            System.out.println("3.Edit Membership Information");
+            System.out.println("4.Membership Unsubscribe");
+            System.out.println("5. List Members");
+            System.out.println("6. Exit");
+            System.out.print("Enter Your Menu [1‐6]:");
+            Scanner Sc = new Scanner(System.in);
+            num = Sc.nextInt();
+            if(num==6){
+                return;
+            }
+        }while(num<=6);
+}
 }
