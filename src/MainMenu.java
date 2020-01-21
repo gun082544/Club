@@ -29,6 +29,11 @@ public class MainMenu {
                     club = new Club(name, subClubName, Amount);
                     break;
                 case 2:
+                    if(club.getCount() == club.getStudent().length){
+                        System.out.println("Already Full !!!");
+                        System.out.println("");
+                        break;
+                    }
                     System.out.print("Name :");
                     String nameStudent = form.nextLine();
                     System.out.print("last Name :");

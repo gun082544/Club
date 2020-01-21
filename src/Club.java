@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class Club {
 
-    Student student[];
-    String clubName;
-    String subClubName;
-    int count;
+    private Student student[];
+    private String clubName;
+    private String subClubName;
+    private int count;
     Scanner input = new Scanner(System.in);
 
     public Club() {
@@ -18,12 +18,12 @@ public class Club {
         this.subClubName = subClubName;
     }
 
-    public void addStudent(String name, String lastname, long id, String faculty) {
+    protected boolean addStudent(String name, String lastname, long id, String faculty) {
         if (this.count < student.length) {
             student[count++] = new Student(name, lastname, id, faculty);
-            return;
+            return true;
         }
-        System.out.println("Already Full !!!");
+        return false;
     }
 
     public void EditInfo(long searchId) {
@@ -75,4 +75,13 @@ public class Club {
         student = temp;
 
     }
+
+    public int getCount() {
+        return count;
+    }
+
+    public Student[] getStudent() {
+        return student;
+    }
+    
 }
